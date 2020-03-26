@@ -3,9 +3,13 @@ html {
     scroll-behavior: smooth;
 }
 
+h1, h2, h3, p {
+    margin: 0 0 .8em;
+}
+
 .app {
     display: grid;
-    grid-template-columns: 1fr 1000px 1fr;
+    grid-template-columns: 1fr 900px 1fr;
     grid-template-rows: max-content 1fr;
 }
 
@@ -17,9 +21,10 @@ html {
     background-size: cover;
     grid-column: 1 / span 3;
     grid-gap: 30px;
+    margin-bottom: 50px;
     padding: 30px;
-
     text-align: center;
+    
 }
 
 .header__link:link, .header__link:visited {
@@ -40,4 +45,157 @@ html {
 
 .body {
     grid-column: 2;
+}
+
+.title {
+    text-align: center;
+
+    margin-bottom: 40px;
+
+    animation: rainbow 20s ease-in-out infinite alternate;
+}
+
+.title__main {
+    margin-bottom: .1em;
+    font-size: 45px;
+}
+
+.title__sub {
+    margin-bottom: .1em;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 25px;
+    animation: title-colour 2s ease-in-out infinite alternate;
+}
+
+.the-creations {
+    margin-bottom: 50px;
+}
+
+.creation {
+    display: grid;
+    align-content: center;
+    grid-auto-flow: dense;
+    grid-template-columns: max-content 1fr;
+
+    margin-bottom: 40px;
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background-color: rgb(220, 239, 251);
+}
+
+.creation__details {
+    padding: 30px;
+
+    line-height: 1.3;
+}
+
+.creation:nth-child(5n+1) {
+    background-color: rgb(246, 251, 220);
+}
+
+.creation:nth-child(5n+2) {
+    background-color: rgb(220, 251, 232);
+}
+
+.creation:nth-child(5n+3) {
+    background-color: rgb(251, 220, 244);
+}
+
+
+.creation:nth-child(5n+4) {
+    background-color: rgb(251, 232, 220);
+}
+
+
+.creation:nth-child(even) {
+    grid-template-columns: 1fr max-content;
+}
+
+.creation:nth-child(even) > .creation__details {
+    grid-column: 1;
+}
+
+
+.creation:nth-child(even) > .creation__image {
+    grid-column: 2;
+}
+
+.the-creator {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: max-content 1fr;
+
+    margin-top: 60px;
+    margin-bottom: 60px;
+    overflow: hidden;
+
+    background-color: #fff;
+    border-radius: 10px;
+
+    filter: drop-shadow(0px 0px 20px rgba(220, 239, 251, 1));
+}
+
+.the-creator__bio {
+    padding: 30px;
+}
+
+
+a:link, a:visited {
+    animation: title-colour 2s ease-in-out infinite alternate;
+}
+
+@keyframes title-colour {
+    from {
+        color: #051073;
+    }
+
+    to {
+        color: #0e92b0;
+    }
+}
+
+@keyframes rainbow{
+    100%,0%{
+        color: rgb(255,0,0);
+    }
+    8%{
+        color: rgb(255,127,0);
+    }
+    16%{
+        color: rgb(255,255,0);
+    }
+    25%{
+        color: rgb(127,255,0);
+    }
+    33%{
+        color: rgb(0,255,0);
+    }
+    41%{
+        color: rgb(0,255,127);
+    }
+    50%{
+        color: rgb(0,255,255);
+    }
+    58%{
+        color: rgb(0,127,255);
+    }
+    66%{
+        color: rgb(0,0,255);
+    }
+    75%{
+        color: rgb(127,0,255);
+    }
+    83%{
+        color: rgb(255,0,255);
+    }
+    91%{
+        color: rgb(255,0,127);
+    }
 }
